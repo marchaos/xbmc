@@ -1584,7 +1584,7 @@ void CDVDDemuxFFmpeg::ParsePacket(AVPacket *pkt)
     // we just want to transport SPS data into codec context
     st->codec->skip_idct = AVDISCARD_ALL;
     // extradata is not decoded if skip_frame >= AVDISCARD_NONREF
-//    st->codec->skip_frame = AVDISCARD_ALL;
+    st->codec->skip_frame = AVDISCARD_ALL;
     st->codec->skip_loop_filter = AVDISCARD_ALL;
 
     // We are looking for an IDR frame
